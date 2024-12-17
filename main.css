@@ -6,6 +6,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  font-size: 14px;
+}
+
 @layer components {
   .brand-color {
     @apply flex items-center justify-center w-6 h-6 p-0.5 border rounded-full cursor-pointer transition-all duration-300;
