@@ -7,77 +7,9 @@ const addToCart = document.getElementById("add_to_cart");
 const productQnt = document.getElementById("product_quentity");
 const tableBody = document.getElementById("table_body");
 const openModalButton = document.getElementById("open_modal_button");
-const modal = document.getElementById("myModal");
+const modal = document.getElementById("my_modal");
 
-const productsData = [
-  {
-    id: 1,
-    title: "Classy Modern Smart watch",
-    img: "./images/img1.png",
-    price: "99",
-    disPrice: "89",
-    colorName: "indigo",
-    color: "#816BFF",
-    sizeAndPrice: [
-      { size: "S", price: "99" },
-      { size: "M", price: "100" },
-      { size: "L", price: "101" },
-      { size: "XL", price: "102" },
-    ],
-  },
-  {
-    id: 2,
-    title: "Modern watch",
-    img: "./images/img2.png",
-    price: "94",
-    disPrice: "79",
-    colorName: "sky",
-    color: "#1FCEC9",
-    sizeAndPrice: [
-      { size: "S", price: "99" },
-      { size: "M", price: "100" },
-      { size: "L", price: "101" },
-      { size: "XL", price: "102" },
-    ],
-  },
-  {
-    id: 3,
-    title: "Classy Smart watch",
-    img: "./images/img3.png",
-    price: "99",
-    disPrice: "89",
-    colorName: "cyan",
-    color: "#4B97D3",
-    sizeAndPrice: [
-      { size: "S", price: "99" },
-      { size: "M", price: "100" },
-      { size: "L", price: "101" },
-      { size: "XL", price: "102" },
-    ],
-  },
-  {
-    id: 4,
-    title: "Smart watch",
-    img: "./images/img4.png",
-    price: "99",
-    disPrice: "89",
-    colorName: "gray",
-    color: "#3B4747",
-    sizeAndPrice: [
-      { size: "S", price: "99" },
-      { size: "M", price: "100" },
-      { size: "L", price: "101" },
-      { size: "XL", price: "102" },
-    ],
-  },
-];
-
-const imgArr = [
-  "./images/img1.png",
-  "./images/img2.png",
-  "./images/img3.png",
-  "./images/img4.png",
-];
+const imgArr = ["/img1.png", "/img2.png", "/img3.png", "/img4.png"];
 
 // handle brand color selected & image changes
 colorItems.forEach((item, index) => {
@@ -104,7 +36,6 @@ allSize.forEach((item) => {
 
     const getPrice = item.getAttribute("data");
     document.getElementById("price").innerText = `$${getPrice.split("-")[1]}`;
-    console.log(getPrice, "pri");
   });
 });
 
@@ -137,8 +68,6 @@ addToCart.addEventListener("click", () => {
   productQnt.innerText = cart.length;
   getCartData(cart);
 });
-
-// handle plus button
 
 // handle cart data
 const getCartData = (cart) => {
@@ -183,8 +112,6 @@ const getCartData = (cart) => {
     <td class="px-4 py-6 text-center">${totalQuentity}</td>
     <td class="px-4 py-6 text-center">$${totalPrice}</td>
   </tr>`;
-
-  console.log(cart, "cart");
 };
 
 // open modal
